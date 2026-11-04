@@ -182,6 +182,15 @@ section[id]:not(.hero){scroll-margin-top:72px}
 .work-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .strip-ctrl{display:flex;gap:10px}
 .strip-ctrl button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;transition:border-color .3s var(--ease),background .3s var(--ease)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.filters button{display:inline-flex;align-items:baseline;gap:6px;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text-secondary);font-size:13px;font-weight:700;cursor:pointer;transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.filters button:hover{border-color:var(--text-primary);color:var(--text-primary)}
+.filters button[aria-pressed="true"]{background:var(--text-primary);border-color:var(--text-primary);color:var(--canvas)}
+.filters small{font-size:11px;font-weight:500;opacity:.6}
+@media (pointer:coarse){.filters button{min-height:44px;align-items:center}}
+.clip{transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.clip.fading{opacity:0;transform:scale(.96)}
+.clip.gone{display:none}
 .strip-ctrl button:hover{border-color:var(--accent);background:var(--accent-muted)}
 .strip{display:flex;align-items:flex-start;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:48px var(--pad) 24px;scroll-padding:0 var(--pad);scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
 .strip::after{content:"";flex:0 0 1px}
@@ -444,40 +453,51 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
       <button type="button" data-dir="1" aria-label="Volgende" data-i18n-aria="next"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="m7 3 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
     </div>
   </div>
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projecten" data-i18n-aria="fltLbl">
+      <button type="button" data-f="all" aria-pressed="true"><span data-i18n="fAll">Alles</span> <small></small></button>
+      <button type="button" data-f="2d" aria-pressed="false">2D <small></small></button>
+      <button type="button" data-f="3d" aria-pressed="false">3D <small></small></button>
+      <button type="button" data-f="video" aria-pressed="false">Video <small></small></button>
+      <button type="button" data-f="logo" aria-pressed="false"><span data-i18n="fLogo">Logo-animatie</span> <small></small></button>
+      <button type="button" data-f="client" aria-pressed="false"><span data-i18n="fClient">Klantprojecten</span> <small></small></button>
+    </div>
+    <p class="sr" id="fltStatus" aria-live="polite"></p>
+  </div>
   <div class="strip" id="strip" tabindex="0" aria-label="Projecten" data-i18n-aria="stripLbl">
-    <article class="clip v" data-src="assets/work/reel.mp4">
+    <article class="clip v" data-cat="2d" data-src="assets/work/reel.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel NOKYLA Reel af"><img src="assets/work/reel.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>NOKYLA Reel</h3><p class="meta" data-i18n="m1">Studio reel · 2D</p>
     </article>
-    <article class="clip v" data-src="assets/work/ruig.mp4">
+    <article class="clip v" data-cat="2d logo client" data-src="assets/work/ruig.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel RUIG Barbier af"><img src="assets/work/ruig.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>RUIG Barbier</h3><p class="meta" data-i18n="m2">Klantproject · Logo-animatie · 2D</p>
     </article>
-    <article class="clip v" data-src="assets/work/ruig-notlikeus.mp4">
+    <article class="clip v" data-cat="video client" data-src="assets/work/ruig-notlikeus.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel RUIG · Not Like Us af"><img src="assets/work/ruig-notlikeus.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>RUIG · Not Like Us</h3><p class="meta" data-i18n="mR">Klantproject · Social reel</p>
     </article>
-    <article class="clip v" data-src="assets/work/ruig-peekaboo.mp4">
+    <article class="clip v" data-cat="video client" data-src="assets/work/ruig-peekaboo.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel RUIG · Peekaboo af"><img src="assets/work/ruig-peekaboo.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>RUIG · Peekaboo</h3><p class="meta" data-i18n="mR">Klantproject · Social reel</p>
     </article>
-    <article class="clip w" data-src="assets/work/nb-nature.mp4">
+    <article class="clip w" data-cat="3d" data-src="assets/work/nb-nature.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel New Balance Nature af"><img src="assets/work/nb-nature.jpg" alt="" loading="lazy" width="1280" height="720"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>New Balance Nature</h3><p class="meta">3D · Noah Heymans</p><p class="note meta" data-i18n="nbN">Persoonlijk project, niet in opdracht van New Balance.</p>
     </article>
-    <article class="clip sq" data-src="assets/work/particle.mp4">
+    <article class="clip sq" data-cat="3d" data-src="assets/work/particle.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel Particle N af"><img src="assets/work/particle.jpg" alt="" loading="lazy" width="720" height="720"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>Particle N</h3><p class="meta">3D · Noah Heymans</p>
     </article>
-    <article class="clip v" data-src="assets/work/sting.mp4">
+    <article class="clip v" data-cat="2d logo" data-src="assets/work/sting.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel NK Logo Sting af"><img src="assets/work/sting.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>NK Logo Sting</h3><p class="meta">Logo sting · 2D</p>
     </article>
-    <article class="clip w" data-src="assets/work/nb740.mp4">
+    <article class="clip w" data-cat="3d" data-src="assets/work/nb740.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel New Balance 740 af"><img src="assets/work/nb740.jpg" alt="" loading="lazy" width="1280" height="720"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>New Balance 740</h3><p class="meta">3D · Kylian Smet</p><p class="note meta" data-i18n="nbN">Persoonlijk project, niet in opdracht van New Balance.</p>
     </article>
-    <article class="clip v" data-src="assets/work/machine.mp4">
+    <article class="clip v" data-cat="3d" data-src="assets/work/machine.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel Dynamic Machine af"><img src="assets/work/machine.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>Dynamic Machine</h3><p class="meta">3D · Kylian Smet</p><p class="note meta" data-i18n="m5n">Persoonlijk project, niet in opdracht van Red Bull.</p>
     </article>
@@ -632,7 +652,7 @@ const T={
  en:{skip:'Skip to content',navWork:'Work',navSvc:'Services',navProc:'Process',navTeam:'Team',ctaStart:'Start a project',ctaWork:'See our work',
   b1h:'We make motion that sticks.',b2h:'One drop.',b2s:'And nothing stands still.',b3s:'From logo animation to full campaign.',b4h:'Make your brand move.',b4s:'A studio of two. Direct contact, clear agreements, every frame counts.',
   sH:'Make your brand move.',sP:'nokyla.studio makes motion design that sticks. 2D, 3D and video, from logo animation to full campaign.',
-  wK:'[02] Work',wH:'Our projects.',wP:'Real projects. Press play.',prev:'Previous',next:'Next',stripLbl:'Projects',m1:'Studio reel · 2D',m2:'Client project · Logo animation · 2D',m5n:'Personal project, not commissioned by Red Bull.',mR:'Client project · Social reel',nbN:'Personal project, not commissioned by New Balance.',
+  wK:'[02] Work',wH:'Our projects.',wP:'Real projects. Press play.',prev:'Previous',next:'Next',stripLbl:'Projects',m1:'Studio reel · 2D',m2:'Client project · Logo animation · 2D',m5n:'Personal project, not commissioned by Red Bull.',fltLbl:'Filter projects',fAll:'All',fLogo:'Logo animation',fClient:'Client work',mR:'Client project · Social reel',nbN:'Personal project, not commissioned by New Balance.',
   svcK:'Services',svcH:'What we do.',s1h:'Logo animation',s1p:'Your logo, but alive. For intros, socials and your website.',s2h:'Social & 2D motion',s2p:'Short clips that stop the scroll. In 9:16, 1:1 and 16:9.',s3h:'3D & product',s3p:'Your product like nobody saw it before. Light, material, motion.',
   recK:'[03] Try it',recH:'Hold REC.',recB:'Hold to record',recDone:'See? Nothing stands still.',recHint:'Keep holding...',recAgain:'One more time',
   procK:'How we work',procH:'From idea to final frame.',procP:'Four steps. No surprises. You always know where your project stands.',p1h:'Intro',p1p:'You tell us what you want. We ask the right questions.',p2h:'Proposal',p2p:'Concept, timeline and price. In writing, before we start.',p3h:'Animation',p3p:'You see drafts and give feedback. Changes are part of it.',p4h:'Delivery',p4p:'Every format you need, ready to post.',
@@ -802,6 +822,20 @@ function toggleClip(c){const v=c.querySelector('video');
   v.onended=()=>stopClip(c)}
 clips.forEach(c=>{const vf=c.querySelector('.vf');vf.addEventListener('click',()=>toggleClip(c));vf.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleClip(c)}})});
 new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)clips.forEach(stopClip)}),{threshold:0}).observe(document.getElementById('werk'));
+
+/* ---------------- work filters ---------------- */
+const fbtns=[...document.querySelectorAll('.filters button')],fStatus=document.getElementById('fltStatus');let curF='all',fTimer=null;
+function countFilters(){fbtns.forEach(b=>{const f=b.dataset.f;b.querySelector('small').textContent=clips.filter(c=>f==='all'||c.dataset.cat.split(' ').includes(f)).length})}
+function applyFilter(f){curF=f;fbtns.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.f===f)));
+  const show=c=>f==='all'||c.dataset.cat.split(' ').includes(f);const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  clips.forEach(c=>{if(!show(c))stopClip(c)});clearTimeout(fTimer);
+  const swap=()=>{clips.forEach(c=>{c.classList.toggle('gone',!show(c));if(show(c))c.classList.add('fading')});strip.scrollLeft=0;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>clips.forEach(c=>c.classList.remove('fading'))))};
+  if(rm){clips.forEach(c=>{c.classList.toggle('gone',!show(c));c.classList.remove('fading')});strip.scrollLeft=0}
+  else{clips.forEach(c=>c.classList.add('fading'));fTimer=setTimeout(swap,280)}
+  const n=clips.filter(show).length;fStatus.textContent=n+' '+(lang==='en'?(n===1?'project':'projects'):(n===1?'project':'projecten'))}
+fbtns.forEach(b=>b.addEventListener('click',()=>{if(b.dataset.f!==curF)applyFilter(b.dataset.f)}));
+countFilters();
 
 /* ---------------- form (mailto) ---------------- */
 const form=document.getElementById('form');

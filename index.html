@@ -12,10 +12,17 @@
 <meta property="og:url" content="https://nokylastudio.github.io/">
 <meta property="og:image" content="https://nokylastudio.github.io/assets/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230E0E10'/%3E%3Cpath d='M10 20V10h10M44 10h10v10M54 44v10H44M20 54H10V44' fill='none' stroke='%23C6FF3D' stroke-width='4'/%3E%3Cpath d='M17 42V22h6l9 12V22h5v20h-6l-9-12v12z' fill='%23F4F4F0'/%3E%3Cpath d='M39 22h5v8l7-8h6l-9 10 9 10h-6l-7-8v8h-5z' fill='%23F4F4F0'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Syne:wght@800&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url(assets/fonts/jetbrains-mono-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/syne-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:swap;src:url(assets/fonts/syne-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 :root{
   --canvas:#0E0E10;--panel:#17171A;--accent:#C6FF3D;--accent-hover:#D7FF73;--accent-muted:rgba(198,255,61,.16);
   --text-secondary:#A6A69F;--text-primary:#F4F4F0;--paper:#F4F4F0;--ink2:#55554F;--line:#3A3A3F;
@@ -327,6 +334,8 @@ form textarea{min-height:130px;resize:vertical}
 .chips input:focus-visible+span{outline:2px solid var(--canvas);outline-offset:3px}
 .btn-ink{background:var(--canvas);color:var(--accent);padding:16px 28px;font-size:14px}
 .btn-ink:hover{transform:translateY(-2px);box-shadow:0 12px 30px -12px rgba(14,14,16,.6)}
+.fine{font-size:12px;margin:16px 0 0;color:var(--canvas)}
+.fine a{color:var(--canvas)}
 .ok{display:none;margin-top:18px;padding:16px 18px;border:2px solid var(--canvas);border-radius:6px;font-weight:500}
 form.sent .ok{display:block;animation:open .6s var(--ease)}
 .lime .dust{position:absolute;inset:0;pointer-events:none;overflow:hidden}
@@ -580,6 +589,7 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
       </fieldset>
       <div class="f r"><label for="fm" data-i18n="fMsg">Vertel kort over je project</label><textarea id="fm" name="msg" data-i18n-ph="phMsg" placeholder="Wat, voor wie, en tegen wanneer?"></textarea></div>
       <button class="btn btn-ink r" type="submit"><span class="dot" aria-hidden="true"></span><span data-i18n="fSend">Verstuur</span></button>
+      <p class="fine r"><span data-i18n="fFine">We gebruiken je gegevens alleen om je te antwoorden.</span> <a href="privacy.html" data-i18n="fFineLink">Lees onze privacyverklaring</a></p>
       <p class="ok" role="status" data-i18n="fOk">Je mailprogramma opent nu. Verstuur de mail en we antwoorden snel.</p>
     </form>
   </div>
@@ -593,7 +603,7 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
       <div><p><a href="mailto:nokyla.studio@gmail.com">nokyla.studio@gmail.com</a></p><p>Kylian Smet · Noah Heymans</p></div>
       <div class="lang" role="group" aria-label="Taal / Language"><button type="button" data-lang="nl" aria-pressed="true">NL</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div>
     </div>
-    <div class="small"><span>© 2026 nokyla.studio</span><span data-i18n="ai">Openingsbeeld gemaakt met AI. Al het werk hierboven is van ons.</span></div>
+    <div class="small"><span>© 2026 nokyla.studio · <a href="privacy.html" data-i18n="privLink">Privacy</a></span><span data-i18n="ai">Openingsbeeld gemaakt met AI. Al het werk hierboven is van ons.</span></div>
   </div>
 </footer>
 
@@ -612,7 +622,7 @@ const T={
   tH:'A studio of two.',tP:'No account managers. You talk straight to the people who animate.',v1:'Craft',v1p:'Every frame counts.',v2:'Motion',v2p:'Nothing stands still.',v3:'Nerve',v3p:'Better to stand out than play it safe.',
   fH:'Good question.',fP:'Your question is not here? Just email us.',q1:'What does an animation cost?',a1:'It depends on length and style. You get a clear price first, and only then do we start.',q2:'How fast is it done?',a2:"We agree on a deadline together and stick to it. In a hurry? Say so right away and we'll see what's possible.",q3:'Can I still ask for changes?',a3:'Yes. You see drafts, and feedback rounds are part of the proposal.',q4:'Do you work with my brand style?',a4:'Always. Your colors, your fonts, your logo. We make them move.',q5:'What files do I get?',a5:'Video in the formats you need: 16:9, 9:16, 1:1. Ready for web and socials.',
   cK:'[04] Next',cH:"Let's create together.",fName:'Name',phName:'Your name',phMail:'you@company.com',fWhat:'What needs to move?',c1:'Logo animation',c2:'Social content',c4:'Something else',fMsg:'Tell us briefly about your project',phMsg:'What, for whom, and by when?',fSend:'Send',fOk:"Your email app is opening. Send the mail and we'll reply soon.",fErr:'Fill in your name and a valid email address.',
-  ai:'Opening visual made with AI. All the work above is ours.',play:'Play',pause:'Pause',subj:'New project via nokyla.studio'}
+  ai:'Opening visual made with AI. All the work above is ours.',privLink:'Privacy',fFine:'We only use your details to reply to you.',fFineLink:'Read our privacy statement',play:'Play',pause:'Pause',subj:'New project via nokyla.studio'}
 };
 const NL={};document.querySelectorAll('[data-i18n]').forEach(e=>{NL[e.dataset.i18n]=e.textContent});
 document.querySelectorAll('[data-i18n-ph]').forEach(e=>{NL[e.dataset.i18nPh]=e.placeholder});

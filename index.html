@@ -183,10 +183,11 @@ section[id]:not(.hero){scroll-margin-top:72px}
 .strip-ctrl{display:flex;gap:10px}
 .strip-ctrl button{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;transition:border-color .3s var(--ease),background .3s var(--ease)}
 .strip-ctrl button:hover{border-color:var(--accent);background:var(--accent-muted)}
-.strip{display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:48px var(--pad) 24px;scroll-padding:0 var(--pad);scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
+.strip{display:flex;align-items:flex-start;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;padding:48px var(--pad) 24px;scroll-padding:0 var(--pad);scrollbar-width:thin;scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
 .strip::after{content:"";flex:0 0 1px}
 .clip{flex:0 0 auto;scroll-snap-align:start;--h:clamp(380px,64vh,600px)}
 .clip.v{width:calc(var(--h)*9/16)}.clip.sq{width:var(--h)}
+.clip.w{width:min(calc(var(--h)*16/9),86vw)}.clip.w .vf{height:auto;aspect-ratio:16/9}.clip.w .meta{max-width:none}
 .vf{position:relative;height:var(--h);border-radius:6px;overflow:hidden;background:#000;cursor:pointer}
 .vf img,.vf video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .5s var(--ease)}
 .vf video{opacity:0}
@@ -452,6 +453,18 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
       <div class="vf" role="button" tabindex="0" aria-label="Speel RUIG Barbier af"><img src="assets/work/ruig.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>RUIG Barbier</h3><p class="meta" data-i18n="m2">Klantproject · Logo-animatie · 2D</p>
     </article>
+    <article class="clip v" data-src="assets/work/ruig-notlikeus.mp4">
+      <div class="vf" role="button" tabindex="0" aria-label="Speel RUIG · Not Like Us af"><img src="assets/work/ruig-notlikeus.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
+      <h3>RUIG · Not Like Us</h3><p class="meta" data-i18n="mR">Klantproject · Social reel</p>
+    </article>
+    <article class="clip v" data-src="assets/work/ruig-peekaboo.mp4">
+      <div class="vf" role="button" tabindex="0" aria-label="Speel RUIG · Peekaboo af"><img src="assets/work/ruig-peekaboo.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
+      <h3>RUIG · Peekaboo</h3><p class="meta" data-i18n="mR">Klantproject · Social reel</p>
+    </article>
+    <article class="clip w" data-src="assets/work/nb-nature.mp4">
+      <div class="vf" role="button" tabindex="0" aria-label="Speel New Balance Nature af"><img src="assets/work/nb-nature.jpg" alt="" loading="lazy" width="1280" height="720"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
+      <h3>New Balance Nature</h3><p class="meta">3D · Noah Heymans</p><p class="note meta" data-i18n="nbN">Persoonlijk project, niet in opdracht van New Balance.</p>
+    </article>
     <article class="clip sq" data-src="assets/work/particle.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel Particle N af"><img src="assets/work/particle.jpg" alt="" loading="lazy" width="720" height="720"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>Particle N</h3><p class="meta">3D · Noah Heymans</p>
@@ -459,6 +472,10 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
     <article class="clip v" data-src="assets/work/sting.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel NK Logo Sting af"><img src="assets/work/sting.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
       <h3>NK Logo Sting</h3><p class="meta">Logo sting · 2D</p>
+    </article>
+    <article class="clip w" data-src="assets/work/nb740.mp4">
+      <div class="vf" role="button" tabindex="0" aria-label="Speel New Balance 740 af"><img src="assets/work/nb740.jpg" alt="" loading="lazy" width="1280" height="720"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
+      <h3>New Balance 740</h3><p class="meta">3D · Kylian Smet</p><p class="note meta" data-i18n="nbN">Persoonlijk project, niet in opdracht van New Balance.</p>
     </article>
     <article class="clip v" data-src="assets/work/machine.mp4">
       <div class="vf" role="button" tabindex="0" aria-label="Speel Dynamic Machine af"><img src="assets/work/machine.jpg" alt="" loading="lazy" width="720" height="1280"><video playsinline preload="none"></video><i class="cn tl"></i><i class="cn br"></i><span class="st"><i></i>REC</span><span class="pl" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5v19l17-9.5z" fill="#F4F4F0"/></svg></span></div>
@@ -615,7 +632,7 @@ const T={
  en:{skip:'Skip to content',navWork:'Work',navSvc:'Services',navProc:'Process',navTeam:'Team',ctaStart:'Start a project',ctaWork:'See our work',
   b1h:'We make motion that sticks.',b2h:'One drop.',b2s:'And nothing stands still.',b3s:'From logo animation to full campaign.',b4h:'Make your brand move.',b4s:'A studio of two. Direct contact, clear agreements, every frame counts.',
   sH:'Make your brand move.',sP:'nokyla.studio makes motion design that sticks. 2D, 3D and video, from logo animation to full campaign.',
-  wK:'[02] Work',wH:'Our projects.',wP:'Real projects. Press play.',prev:'Previous',next:'Next',stripLbl:'Projects',m1:'Studio reel · 2D',m2:'Client project · Logo animation · 2D',m5n:'Personal project, not commissioned by Red Bull.',
+  wK:'[02] Work',wH:'Our projects.',wP:'Real projects. Press play.',prev:'Previous',next:'Next',stripLbl:'Projects',m1:'Studio reel · 2D',m2:'Client project · Logo animation · 2D',m5n:'Personal project, not commissioned by Red Bull.',mR:'Client project · Social reel',nbN:'Personal project, not commissioned by New Balance.',
   svcK:'Services',svcH:'What we do.',s1h:'Logo animation',s1p:'Your logo, but alive. For intros, socials and your website.',s2h:'Social & 2D motion',s2p:'Short clips that stop the scroll. In 9:16, 1:1 and 16:9.',s3h:'3D & product',s3p:'Your product like nobody saw it before. Light, material, motion.',
   recK:'[03] Try it',recH:'Hold REC.',recB:'Hold to record',recDone:'See? Nothing stands still.',recHint:'Keep holding...',recAgain:'One more time',
   procK:'How we work',procH:'From idea to final frame.',procP:'Four steps. No surprises. You always know where your project stands.',p1h:'Intro',p1p:'You tell us what you want. We ask the right questions.',p2h:'Proposal',p2p:'Concept, timeline and price. In writing, before we start.',p3h:'Animation',p3p:'You see drafts and give feedback. Changes are part of it.',p4h:'Delivery',p4p:'Every format you need, ready to post.',

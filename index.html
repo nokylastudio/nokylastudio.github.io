@@ -202,13 +202,6 @@ section[id]:not(.hero){scroll-margin-top:72px}
 .clip .note{font-size:11px;color:var(--text-secondary);opacity:.85;margin:6px 0 0}
 @media (max-width:720px){.clip{--h:440px}}
 
-/* interlude */
-.interlude{position:relative;height:clamp(420px,80vh,760px);display:grid;place-items:center;text-align:center;overflow:hidden}
-.interlude .bg{position:absolute;inset:-8% 0;background:url(assets/hero-ending.jpg) center/cover;transform:translateY(calc(var(--py,0)*1px))}
-.interlude::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(8,8,12,.55),rgba(8,8,12,.15) 70%),linear-gradient(180deg,var(--canvas) 0%,rgba(14,14,16,0) 22%,rgba(14,14,16,0) 78%,var(--paper) 100%)}
-.interlude p{position:relative;z-index:1;margin:0;font-family:var(--display);font-weight:800;font-size:clamp(44px,8vw,140px);line-height:.95;text-shadow:var(--tshadow)}
-.interlude p small{display:block;font-family:var(--mono);font-weight:500;font-size:clamp(13px,1.1vw,16px);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-top:22px}
-
 /* services */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border-top:2px solid var(--canvas)}
 .svc{padding:36px 32px 40px 0;border-right:1px solid #CFCFC8}
@@ -355,7 +348,6 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
   .fr svg path,.svc svg .d{stroke-dashoffset:0}
   .timeline .track i{transform:scaleX(1)}
   .step::before{background:var(--accent)}
-  .interlude .bg{transform:none}
   .static-copy{animation:none}
   @media (max-width:900px){.timeline .track i{transform:scaleY(1)}}
 }
@@ -434,7 +426,7 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
   <div class="wrap work-head rv">
     <div>
       <p class="kick r" data-i18n="wK">[02] Werk</p>
-      <div class="fr r"><svg class="a" viewBox="0 0 20 20" aria-hidden="true"><path d="M1.5 20V1.5H20"/></svg><svg class="b" viewBox="0 0 20 20" aria-hidden="true"><path d="M18.5 0v18.5H0"/></svg><h2 class="h2" id="werk-h" data-i18n="wH">Kijk maar.</h2></div>
+      <div class="fr r"><svg class="a" viewBox="0 0 20 20" aria-hidden="true"><path d="M1.5 20V1.5H20"/></svg><svg class="b" viewBox="0 0 20 20" aria-hidden="true"><path d="M18.5 0v18.5H0"/></svg><h2 class="h2" id="werk-h" data-i18n="wH">Onze projecten.</h2></div>
       <p class="lede r" data-i18n="wP">Echte projecten. Druk op play.</p>
     </div>
     <div class="strip-ctrl r">
@@ -466,13 +458,12 @@ footer{padding:72px 0 40px;border-top:1px solid var(--line)}
   </div>
 </section>
 
-<div class="interlude" aria-hidden="true"><div class="bg"></div><p><span data-i18n="intl">Niets staat stil.</span><small>nokyla.studio</small></p></div>
 
 <section class="sec paper" id="diensten" aria-labelledby="svc-h">
   <div class="wrap">
     <div class="rv">
-      <p class="kick r" data-i18n="svcK">Wat we maken</p>
-      <div class="fr r"><svg class="a" viewBox="0 0 20 20" aria-hidden="true"><path d="M1.5 20V1.5H20"/></svg><svg class="b" viewBox="0 0 20 20" aria-hidden="true"><path d="M18.5 0v18.5H0"/></svg><h2 class="h2" id="svc-h" data-i18n="svcH">Alles wat moet bewegen.</h2></div>
+      <p class="kick r" data-i18n="svcK">Diensten</p>
+      <div class="fr r"><svg class="a" viewBox="0 0 20 20" aria-hidden="true"><path d="M1.5 20V1.5H20"/></svg><svg class="b" viewBox="0 0 20 20" aria-hidden="true"><path d="M18.5 0v18.5H0"/></svg><h2 class="h2" id="svc-h" data-i18n="svcH">Wat we doen.</h2></div>
     </div>
     <div class="svc-grid rv">
       <article class="svc r">
@@ -614,8 +605,8 @@ const T={
  en:{skip:'Skip to content',navWork:'Work',navSvc:'Services',navProc:'Process',navTeam:'Team',ctaStart:'Start a project',ctaWork:'See our work',
   b1h:'We make motion that sticks.',b2h:'One drop.',b2s:'And nothing stands still.',b3s:'From logo animation to full campaign.',b4h:'Make your brand move.',b4s:'A studio of two. Direct contact, clear agreements, every frame counts.',
   sH:'Make your brand move.',sP:'nokyla.studio makes motion design that sticks. 2D, 3D and video, from logo animation to full campaign.',
-  wK:'[02] Work',wH:'Take a look.',wP:'Real projects. Press play.',prev:'Previous',next:'Next',stripLbl:'Projects',m1:'Studio reel · 2D',m2:'Client project · Logo animation · 2D',m5n:'Personal project, not commissioned by Red Bull.',
-  intl:'Nothing stands still.',svcK:'What we make',svcH:'Everything that needs to move.',s1h:'Logo animation',s1p:'Your logo, but alive. For intros, socials and your website.',s2h:'Social & 2D motion',s2p:'Short clips that stop the scroll. In 9:16, 1:1 and 16:9.',s3h:'3D & product',s3p:'Your product like nobody saw it before. Light, material, motion.',
+  wK:'[02] Work',wH:'Our projects.',wP:'Real projects. Press play.',prev:'Previous',next:'Next',stripLbl:'Projects',m1:'Studio reel · 2D',m2:'Client project · Logo animation · 2D',m5n:'Personal project, not commissioned by Red Bull.',
+  svcK:'Services',svcH:'What we do.',s1h:'Logo animation',s1p:'Your logo, but alive. For intros, socials and your website.',s2h:'Social & 2D motion',s2p:'Short clips that stop the scroll. In 9:16, 1:1 and 16:9.',s3h:'3D & product',s3p:'Your product like nobody saw it before. Light, material, motion.',
   recK:'[03] Try it',recH:'Hold REC.',recB:'Hold to record',recDone:'See? Nothing stands still.',recHint:'Keep holding...',recAgain:'One more time',
   procK:'How we work',procH:'From idea to final frame.',procP:'Four steps. No surprises. You always know where your project stands.',p1h:'Intro',p1p:'You tell us what you want. We ask the right questions.',p2h:'Proposal',p2p:'Concept, timeline and price. In writing, before we start.',p3h:'Animation',p3p:'You see drafts and give feedback. Changes are part of it.',p4h:'Delivery',p4p:'Every format you need, ready to post.',
   tH:'A studio of two.',tP:'No account managers. You talk straight to the people who animate.',v1:'Craft',v1p:'Every frame counts.',v2:'Motion',v2p:'Nothing stands still.',v3:'Nerve',v3p:'Better to stand out than play it safe.',
@@ -737,12 +728,10 @@ document.addEventListener('visibilitychange',()=>document.body.classList.toggle(
 function dust(el,n,seed){const r=rng(seed);for(let i=0;i<n;i++){const d=document.createElement('i');d.style.left=(r()*100).toFixed(2)+'%';d.style.top=(20+r()*80).toFixed(2)+'%';d.style.animationDelay=(-r()*14).toFixed(2)+'s';d.style.animationDuration=(12+r()*8).toFixed(2)+'s';el.appendChild(d)}}
 document.querySelectorAll('.dust').forEach((d,i)=>dust(d,18,31+i*7));
 
-/* ---------------- interlude parallax + timeline drive ---------------- */
-const inter=document.querySelector('.interlude'),interBg=inter.querySelector('.bg');
+/* ---------------- timeline drive ---------------- */
 const tl=document.getElementById('timeline'),track=tl.querySelector('.track'),steps=[...tl.querySelectorAll('.step')];
 let pinned=false,lastPy=null,lastD=-1,secRaf=null;
 function secDrive(){secRaf=null;if(pinned)return;
-  const ir=inter.getBoundingClientRect();if(ir.bottom>0&&ir.top<innerHeight){const py=Math.round((ir.top+ir.height/2-innerHeight/2)*-.12);if(py!==lastPy){lastPy=py;interBg.style.setProperty('--py',py)}}
   const r=tl.getBoundingClientRect();const d=clamp((innerHeight*.85-r.top)/(r.height+innerHeight*.35),0,1);
   if(Math.abs(d-lastD)>.004){lastD=d;track.style.setProperty('--d',d.toFixed(3));steps.forEach((s,i)=>s.classList.toggle('on',d>=i/steps.length+.02))}}
 addEventListener('scroll',()=>{if(secRaf===null)secRaf=requestAnimationFrame(secDrive)},{passive:true});secDrive();
@@ -768,7 +757,7 @@ hold.addEventListener('contextmenu',e=>e.preventDefault());
 again.addEventListener('click',()=>{recDone=false;recsec.classList.remove('done');msg.textContent='';setH(0);hold.focus()});
 
 /* ---------------- pin / unpin (reduced motion live) ---------------- */
-function pinToFinalStates(){pinned=true;document.querySelectorAll('.rv,.fr').forEach(e=>e.classList.add('in','settled'));track.style.setProperty('--d',1);steps.forEach(s=>s.classList.add('on'));interBg.style.setProperty('--py',0);if(!recDone)finishRec();disableScrub()}
+function pinToFinalStates(){pinned=true;document.querySelectorAll('.rv,.fr').forEach(e=>e.classList.add('in','settled'));track.style.setProperty('--d',1);steps.forEach(s=>s.classList.add('on'));if(!recDone)finishRec();disableScrub()}
 function unpinFinalStates(){if(!pinned)return;pinned=false;lastD=-1;lastPy=null;secDrive()}
 const RM=MQLS[4];RM.addEventListener('change',e=>{if(e.matches)pinToFinalStates();else applyHeroMode()});
 if(RM.matches)pinToFinalStates();
